@@ -1,10 +1,10 @@
-terraform { 
-  cloud { 
-    
-    organization = "RootLab" 
+terraform {
+  cloud {
 
-    workspaces { 
-      name = "Zero-Scaling-Fargate-Scaling-Serverless-CI-CD-Pipeline" 
-    } 
-  } 
+    organization = "RootLab"
+
+    workspaces {
+      name = "Zero-Scaling-Fargate-Scaling-Serverless-CI-CD-Pipeline"
+    }
+  }
 }
