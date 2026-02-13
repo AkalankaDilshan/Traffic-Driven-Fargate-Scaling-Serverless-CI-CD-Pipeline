@@ -1,5 +1,19 @@
+resource "aws_kms_key" "s3_key" {
+  description             = "KMS key for CodePipeline S3 bucket"
+  deletion_window_in_days = 10
+  enable_key_rotation     = true
+}
+
+# Create alias for the key
+resource "aws_kms_alias" "s3_key_alias" {
+  name          = "alias/myKmsKey"
+  target_key_id = aws_kms_key.s3_key.key_id
+}
+
+# Then reference it in your data source
 data "aws_kms_alias" "s3kmskey" {
-  name = "alias/myKmsKey"
+  name = aws_kms_alias.s3_key_alias.name
+  depends_on = [aws_kms_alias.s3_key_alias]
 }
 
 resource "aws_codepipeline" "codepipeline" {
