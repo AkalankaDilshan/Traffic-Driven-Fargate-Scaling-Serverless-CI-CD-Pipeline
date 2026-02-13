@@ -13,6 +13,7 @@ module "vpc" {
 
 module "github_connector" {
   source = "./modules/codestarconnections_connection"
+  connector_name = "github_connector"
 }
 
 module "artifact_s3_bucket" {
