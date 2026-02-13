@@ -10,7 +10,7 @@ resource "aws_ecr_repository" "app_repo" {
   ## this mean we can overwrite latest,dev, or whatever tags but can't v* tags like v1.0.0 v1.3.0 likewhise
 
   encryption_configuration {
-    encryption_type = "AES265"
+    encryption_type = var.encryption_type
   }
 
   image_scanning_configuration {
