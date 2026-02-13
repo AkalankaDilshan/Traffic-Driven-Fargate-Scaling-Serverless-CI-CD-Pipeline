@@ -29,9 +29,9 @@ module "codepipeline_iam_role" {
 }
 
 module "ecr_repository" {
-  source        = "./modules/ecr_repository"
-  ecr_repo_name = "zero-scaling-project-repo"
-  encryption_type = "AES256"  #"KMS" "KMS_DSSE"
+  source          = "./modules/ecr_repository"
+  ecr_repo_name   = "zero-scaling-project-repo"
+  encryption_type = "AES256" #"KMS" "KMS_DSSE"
 }
 
 module "ecr_codepipeline" {
