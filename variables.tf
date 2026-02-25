@@ -1,7 +1,7 @@
 variable "region" {
   description = "AWS region"
   type        = string
-  default     = "us-west-1"
+  default     = "eu-west-3"
 }
 
 variable "project_name" {
@@ -13,5 +13,5 @@ variable "project_name" {
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
-  default     = ["us-west-1a", "us-west-1c"]
+  default     = ["eu-west-3a", "eu-west-3c"]
 }
